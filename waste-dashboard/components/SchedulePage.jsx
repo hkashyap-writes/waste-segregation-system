@@ -57,25 +57,23 @@ function BinSchedulePanel({ bin, history, onSchedule, onToggle, onDispatch, acti
       <div className="mt-4">
         <h3 className="font-semibold text-slate-900 mb-2">Pickup History</h3>
         <table className="w-full text-left bg-white/50 rounded-lg">
-  <thead>
-    <tr className="border-b border-slate-300">
-      <th className="p-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">Serial Number</th>
-      <th className="p-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">Last Pickup</th>
-      {/* NEW: Column Header */}
-      <th className="p-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">Serviced By</th>
-    </tr>
-  </thead>
-  <tbody>
-    {history.filter(p => p.binId === bin.id).map((pickup, index) => (
-      <tr key={pickup.id} className="border-b border-slate-200">
-        <td className="p-2 text-slate-700">{index + 1}</td>
-        <td className="p-2 text-slate-700">{new Date(pickup.timestamp).toLocaleString()}</td>
-        {/* NEW: Column Data */}
-        <td className="p-2 text-slate-700 font-medium">{pickup.servicedBy}</td>
-      </tr>
-    ))}
-  </tbody>
-</table>
+          <thead>
+            <tr className="border-b border-slate-300">
+              <th className="p-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">Serial Number</th>
+              <th className="p-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">Last Pickup</th>
+              <th className="p-2 text-xs font-semibold text-slate-500 uppercase tracking-wider">Serviced By</th>
+            </tr>
+          </thead>
+          <tbody>
+            {history.filter(p => p.binId === bin.id).map((pickup, index) => (
+              <tr key={pickup.id} className="border-b border-slate-200">
+                <td className="p-2 text-slate-700">{index + 1}</td>
+                <td className="p-2 text-slate-700">{new Date(pickup.timestamp).toLocaleString()}</td>
+                <td className="p-2 text-slate-700 font-medium">{pickup.servicedBy}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
