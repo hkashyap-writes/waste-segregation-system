@@ -1,0 +1,344 @@
+[
+  {
+    "timestamp": "2025-11-05T11:00:43.583236Z",
+    "binId": "nonbio",
+    "metal": false,
+    "moisture": 1648,
+    "gas": 278,
+    "detectedObject": "Unknown Waste",
+    "id": "log-1762340443592"
+  },
+  {
+    "timestamp": "2025-11-05T11:00:15.733519Z",
+    "binId": "metal",
+    "metal": true,
+    "moisture": 1057,
+    "gas": 164,
+    "detectedObject": "gun barrel",
+    "id": "log-1762340415762"
+  },
+  {
+    "timestamp": "2025-11-05T10:59:39.890953Z",
+    "binId": "metal",
+    "metal": true,
+    "moisture": 1136,
+    "gas": 155,
+    "detectedObject": "door",
+    "id": "log-1762340379903"
+  },
+  {
+    "timestamp": "2025-11-05T10:59:03.949477Z",
+    "binId": "bio",
+    "metal": false,
+    "moisture": 3769,
+    "gas": 813,
+    "detectedObject": "garden roses",
+    "id": "log-1762340343976"
+  },
+  {
+    "timestamp": "2025-11-05T10:57:42.846295Z",
+    "binId": "metal",
+    "metal": true,
+    "moisture": 991,
+    "gas": 125,
+    "detectedObject": "ring",
+    "id": "log-1762340262856"
+  },
+  {
+    "timestamp": "2025-11-05T10:57:24.101396Z",
+    "binId": "metal",
+    "metal": true,
+    "moisture": 1005,
+    "gas": 101,
+    "detectedObject": "colher vista superior",
+    "id": "log-1762340244104"
+  },
+  {
+    "timestamp": "2025-11-05T10:56:12.538446Z",
+    "binId": "bio",
+    "metal": false,
+    "moisture": 3767,
+    "gas": 829,
+    "detectedObject": "artificial flower",
+    "id": "log-1762340172567"
+  },
+  {
+    "timestamp": "2025-11-05T10:53:36.476587Z",
+    "binId": "bio",
+    "metal": false,
+    "moisture": 3780,
+    "gas": 700,
+    "detectedObject": "saba banana",
+    "id": "log-1762340016547"
+  },
+  {
+    "timestamp": "2025-11-05T10:49:29.303532Z",
+    "binId": "bio",
+    "metal": false,
+    "moisture": 3913,
+    "gas": 780,
+    "detectedObject": "saba banana",
+    "id": "log-1762339769307"
+  },
+  {
+    "timestamp": "2025-11-05T10:48:54.168412Z",
+    "binId": "metal",
+    "metal": true,
+    "moisture": 1046,
+    "gas": 191,
+    "detectedObject": "circle",
+    "id": "log-1762339734174"
+  },
+  {
+    "timestamp": "2025-11-05T10:48:19.429522Z",
+    "binId": "nonbio",
+    "metal": false,
+    "moisture": 1689,
+    "gas": 334,
+    "detectedObject": "Unknown Waste",
+    "id": "log-1762339699490"
+  },
+  {
+    "timestamp": "2025-11-05T05:20:18.615176Z",
+    "binId": "bio",
+    "metal": false,
+    "moisture": 3795,
+    "gas": 832,
+    "detectedObject": "saba banana",
+    "id": "log-1762320018631"
+  },
+  {
+    "timestamp": "2025-11-05T05:17:58.145925Z",
+    "binId": "metal",
+    "metal": true,
+    "moisture": 1072,
+    "gas": 173,
+    "detectedObject": "vintage metal cup",
+    "id": "log-1762319878150"
+  },
+  {
+    "timestamp": "2025-11-05T05:17:21.563900Z",
+    "binId": "nonbio",
+    "metal": false,
+    "moisture": 1668,
+    "gas": 371,
+    "detectedObject": "plastic bottle stock",
+    "id": "log-1762319841570"
+  },
+  {
+    "timestamp": "2025-11-05T05:16:53.204362Z",
+    "binId": "bio",
+    "metal": false,
+    "moisture": 3865,
+    "gas": 826,
+    "detectedObject": "cup",
+    "id": "log-1762319813215"
+  },
+  {
+    "timestamp": "2025-11-05T05:14:09.789647Z",
+    "binId": "nonbio",
+    "metal": false,
+    "moisture": 1637,
+    "gas": 332,
+    "detectedObject": "Unknown Waste",
+    "id": "log-1762319649800"
+  },
+  {
+    "timestamp": "2025-11-05T05:11:06.774333Z",
+    "binId": "metal",
+    "metal": true,
+    "moisture": 973,
+    "gas": 184,
+    "detectedObject": "circle",
+    "id": "log-1762319466781"
+  },
+  {
+    "timestamp": "2025-11-05T05:10:08.645554Z",
+    "binId": "nonbio",
+    "metal": false,
+    "moisture": 1625,
+    "gas": 385,
+    "detectedObject": "floor",
+    "id": "log-1762319408694"
+  },
+  {
+    "timestamp": "2025-11-03T19:44:33.449760Z",
+    "binId": "nonbio",
+    "metal": false,
+    "moisture": 1621,
+    "gas": 324,
+    "detectedObject": "Unknown Waste",
+    "id": "log-1762199073455"
+  },
+  {
+    "timestamp": "2025-11-03T19:44:02.838822Z",
+    "binId": "bio",
+    "metal": false,
+    "moisture": 3854,
+    "gas": 751,
+    "detectedObject": "cup",
+    "id": "log-1762199042843"
+  },
+  {
+    "timestamp": "2025-11-03T19:43:33.752113Z",
+    "binId": "metal",
+    "metal": true,
+    "moisture": 1060,
+    "gas": 150,
+    "detectedObject": "silver",
+    "id": "log-1762199013760"
+  },
+  {
+    "timestamp": "2025-11-03T19:43:16.558003Z",
+    "binId": "metal",
+    "metal": true,
+    "moisture": 962,
+    "gas": 106,
+    "detectedObject": "circle",
+    "id": "log-1762198996629"
+  },
+  {
+    "timestamp": "2025-11-03T18:40:48.757882Z",
+    "binId": "bio",
+    "metal": false,
+    "moisture": 3884,
+    "gas": 773,
+    "detectedObject": "Unknown Waste",
+    "id": "log-1762195248751"
+  },
+  {
+    "timestamp": "2025-11-03T18:37:15.331574Z",
+    "binId": "bio",
+    "metal": false,
+    "moisture": 3807,
+    "gas": 784,
+    "detectedObject": "paper",
+    "id": "log-1762195035377"
+  },
+  {
+    "timestamp": "2025-11-03T17:59:52.774677Z",
+    "binId": "nonbio",
+    "metal": false,
+    "moisture": 1479,
+    "gas": 398,
+    "detectedObject": "Unknown Waste",
+    "id": "log-1762192792782"
+  },
+  {
+    "timestamp": "2025-11-03T17:57:50.194819Z",
+    "binId": "metal",
+    "metal": true,
+    "moisture": 1060,
+    "gas": 157,
+    "detectedObject": "plastic",
+    "id": "log-1762192670199"
+  },
+  {
+    "timestamp": "2025-11-03T17:56:30.865304Z",
+    "binId": "nonbio",
+    "metal": false,
+    "moisture": 1500,
+    "gas": 304,
+    "detectedObject": "igneous rock",
+    "id": "log-1762192590872"
+  },
+  {
+    "timestamp": "2025-11-03T17:55:37.727580Z",
+    "binId": "bio",
+    "metal": false,
+    "moisture": 3923,
+    "gas": 809,
+    "detectedObject": "Unknown Waste",
+    "id": "log-1762192537727"
+  },
+  {
+    "timestamp": "2025-11-03T17:54:45.472351Z",
+    "binId": "bio",
+    "metal": false,
+    "moisture": 3802,
+    "gas": 782,
+    "detectedObject": "snack",
+    "id": "log-1762192485474"
+  },
+  {
+    "timestamp": "2025-11-03T17:53:48.481073Z",
+    "binId": "bio",
+    "metal": false,
+    "moisture": 3749,
+    "gas": 789,
+    "detectedObject": "snack",
+    "id": "log-1762192428497"
+  },
+  {
+    "timestamp": "2025-11-03T17:52:05.209960Z",
+    "binId": "metal",
+    "metal": true,
+    "moisture": 1087,
+    "gas": 188,
+    "detectedObject": "brass",
+    "id": "log-1762192325216"
+  },
+  {
+    "timestamp": "2025-11-03T17:49:32.960305Z",
+    "binId": "metal",
+    "metal": true,
+    "moisture": 1079,
+    "gas": 163,
+    "detectedObject": "circle",
+    "id": "log-1762192172965"
+  },
+  {
+    "timestamp": "2025-11-03T17:48:26.516713Z",
+    "binId": "nonbio",
+    "metal": false,
+    "moisture": 1696,
+    "gas": 305,
+    "detectedObject": "aluminium",
+    "id": "log-1762192106520"
+  },
+  {
+    "timestamp": "2025-11-03T17:47:05.313552Z",
+    "binId": "nonbio",
+    "metal": false,
+    "moisture": 1695,
+    "gas": 265,
+    "detectedObject": "wood",
+    "id": "log-1762192025318"
+  },
+  {
+    "timestamp": "2025-11-03T17:43:08.356850Z",
+    "binId": "bio",
+    "metal": false,
+    "moisture": 3804,
+    "gas": 732,
+    "detectedObject": "girl",
+    "id": "log-1762191788361"
+  },
+  {
+    "timestamp": "2025-11-03T17:42:04.136796Z",
+    "binId": "nonbio",
+    "metal": false,
+    "moisture": 1641,
+    "gas": 334,
+    "detectedObject": "artificial flower",
+    "id": "log-1762191724126"
+  },
+  {
+    "timestamp": "2025-11-03T17:40:06.175216Z",
+    "binId": "bio",
+    "metal": false,
+    "moisture": 3709,
+    "gas": 753,
+    "detectedObject": "hardwood",
+    "id": "log-1762191606233"
+  },
+  {
+    "timestamp": "2025-10-29T11:31:11.125423Z",
+    "binId": "metal",
+    "metal": true,
+    "moisture": 1076,
+    "gas": 115,
+    "detectedObject": "vintage metal cup",
+    "id": "log-1761737471163"
+  }
+]
