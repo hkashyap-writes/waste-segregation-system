@@ -37,17 +37,17 @@ export default function LogDetailsPage() {
   return (
     <div className="min-h-screen bg-slate-200 p-6">
       <div className="flex justify-between items-center mb-4">
-  <h1 className="text-2xl font-semibold text-slate-800">Waste Log Details</h1>
-  <button 
-    onClick={fetchData}
-    className="px-4 py-2 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition"
-  >
-    Refresh
-  </button>
-</div>
-
+        <h1 className="text-2xl font-semibold text-slate-800">Waste Log Details</h1>
+        <button 
+          onClick={fetchData}
+          className="px-4 py-2 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700 transition"
+        >
+          Refresh
+        </button>
+      </div>
+      
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
-        {/* Left Side: Table of Logs */}
+        {/* Table of Logs */}
         <div className="lg:col-span-2 bg-white p-4 rounded-2xl shadow">
           <table className="w-full text-left">
             <thead>
@@ -80,10 +80,8 @@ export default function LogDetailsPage() {
             </tbody>
           </table>
         </div>
-
-        {/* Right Side Panels */}
+        {/* Right side Panels */}
         <div className="space-y-4">
-          {/* Classification Box */}
           <div className="bg-white p-4 rounded-2xl shadow">
             <h2 className="text-lg font-semibold text-slate-700 mb-3">
               Waste Classification
@@ -105,7 +103,7 @@ export default function LogDetailsPage() {
             )}
           </div>
 
-          {/* Total Counts Box */}
+          {/* Total Counts */}
           <div className="bg-white p-4 rounded-2xl shadow">
             <h2 className="text-lg font-semibold text-slate-700 mb-3">
               Total Counts
