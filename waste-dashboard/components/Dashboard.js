@@ -36,7 +36,7 @@ const [detectionResult, setDetectionResult] = useState(null);
     setDetectionError('');
 
     try {
-      const flaskResponse = await fetch('http://localhost:5000/process-image', { // Ensure Flask URL is correct
+      const flaskResponse = await fetch('http://localhost:5000/process-image', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ image: base64ImageData }),
@@ -159,13 +159,12 @@ async function handleExportData() {
     });
     
     doc.save('waste_log_report.pdf');
-
+    
   } catch (err) {
     console.error("Failed to export PDF:", err);
     alert("Error exporting PDF. Please check the console.");
   }
 }
-  
 
 const totals = (bins || []).filter(b => b).reduce((acc, b) => ({ ...acc, totalLevel: (acc.totalLevel || 0) + (b.level || 0) }), {});
   const handleDispatch = async (bin) => {
@@ -195,7 +194,7 @@ const safeBins = (bins || []).filter(b => b);
   return (
     <div className="min-h-screen bg-slate-50 p-6">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
+        //Header
         <header className="flex items-center justify-between mb-6">
           <div>
             <h1 className="text-2xl font-semibold text-slate-800">Waste Segregation System Dashboard</h1>
@@ -213,7 +212,7 @@ const safeBins = (bins || []).filter(b => b);
         </header>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items start">
-          {/* Left column: Bins + actions */}
+          //Bins
           <aside className="lg:col-span-1">
             <div className="space-y-4">
               <div className="p-4 rounded-2xl bg-slate-200 shadow">
@@ -273,14 +272,14 @@ const safeBins = (bins || []).filter(b => b);
             </div>
           </aside>
 
-          {/* Main area */}
-          <main className="lg:col-span-3 space-y-6">
-{/* Top metrics */}
+//Main
+<main className="lg:col-span-3 space-y-6">
+//Top metrics
 <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
   <div className="sm:col-span-2 p-4 rounded-2xl bg-slate-200 shadow border border-slate-200">
     <h3 className="text-sm font-medium text-slate-900 mb-3">Waste Detection</h3>
     <div className="grid grid-cols-2 gap-4">
-    {/* Capture Image Button */}
+//Capture Image Button
     <div>
       <button 
         onClick={startCamera}
@@ -290,7 +289,7 @@ const safeBins = (bins || []).filter(b => b);
       </button>
     </div>
 
-    {/* NEW: Camera View Model */}
+//Camera View Model
     {showCameraView && (
       <div className="fixed inset-0 bg-black bg-opacity-75 flex flex-col items-center justify-center z-50 p-4">
         <video ref={videoRef} autoPlay playsInline className="max-w-full max-h-[70vh] rounded-lg mb-4"></video>
@@ -312,7 +311,7 @@ const safeBins = (bins || []).filter(b => b);
       </div>
     )}
 
-    {/* Upload Image Button */}
+//Upload Image
     <div>
       <label 
         htmlFor="upload-input" 
@@ -339,7 +338,7 @@ const safeBins = (bins || []).filter(b => b);
       />
     </div>
     </div>
-    {/* NEW: Result Display Area */}
+//Result Display
     <div className="mt-4 pt-4 border-t border-slate-200 text-center">
       {isProcessing && (
         <p className="text-blue-600 font-semibold">Processing image...</p>
@@ -394,13 +393,11 @@ const safeBins = (bins || []).filter(b => b);
 </Link>
 </section>
 
-  {/* main 2-column container */}
+//Block
   <section className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
-    
-    {/* --- Left Column Wrapper (for Chart + Details) --- */}
     <div className="lg:col-span-2 space-y-6">
     
-      {/* 1. Occupancy Overview */}
+//Occupancy Overview
 <div 
   className={`
     rounded-2xl shadow border border-slate-200 transition-all duration-700 ease-in-out
@@ -433,7 +430,7 @@ const safeBins = (bins || []).filter(b => b);
   
 </div>
 
-      {/* 2. Bin Details  */}
+//Bin Details
       <div 
         className={`p-4 rounded-2xl shadow transition-colors duration-300 ${
           !selectedBin && 'bg-slate-100'
@@ -471,32 +468,30 @@ const safeBins = (bins || []).filter(b => b);
       </div>
     </div>
 
-    {/* --- Right Column (Live Feed) --- */}
+//Live Feed
     <Link href="/logs" passHref legacyBehavior>
-  
     <div className="p-4 rounded-2xl bg-slate-100 shadow transition-all duration-300 hover:shadow-xl hover:scale-105 border border-slate-300">
       <h3 className="text-sm font-medium text-slate-700 mb-3">Live Feed</h3>
       <ul className="space-y-4 text-sm">
-  {sensorHistory.slice(0, 10).map(event => (
-    <li key={event.id} className="flex items-start gap-3 p-2 rounded-lg">
-      <div 
-        className="w-2.5 h-2.5 rounded-full mt-1 flex-shrink-0" 
-        style={{ background: getColorForBin(event.binId) }} 
-      />
-      <div>
-        <div className="font-medium text-slate-800">{event.binId.charAt(0).toUpperCase() + event.binId.slice(1)} waste was processed</div>
-        <div className="text-xs text-slate-600">
-          Added: {new Date(event.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-        </div>
-      </div>
-    </li>
-  ))}
-</ul>
-    </div>
-    
+      {sensorHistory.slice(0, 10).map(event => (
+        <li key={event.id} className="flex items-start gap-3 p-2 rounded-lg">
+          <div 
+            className="w-2.5 h-2.5 rounded-full mt-1 flex-shrink-0" 
+            style={{ background: getColorForBin(event.binId) }} 
+          />
+          <div>
+            <div className="font-medium text-slate-800">{event.binId.charAt(0).toUpperCase() + event.binId.slice(1)} waste was processed</div>
+            <div className="text-xs text-slate-600">
+              Added: {new Date(event.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+            </div>
+          </div>
+        </li>
+      ))}
+    </ul>
+    </div> 
     </Link>
-  </section>
-</main>
+    </section>
+    </main>
         </div>
 
         <footer className="mt-8 text-xs text-slate-500 text-center"> </footer>
@@ -505,7 +500,7 @@ const safeBins = (bins || []).filter(b => b);
   );
 }
 
-/* ---------- Small helper components ---------- */
+//Helper components
 function MetricCard({ title, value, showArrow = true, bgColor = 'bg-slate-100', hasHoverEffect = false }){
   return (
     <div className={`px-4 py-0.25 rounded-2xl ${bgColor} shadow flex items-center gap-1 border border-slate-300 ${hasHoverEffect ? 'transition-transform duration-300 hover:scale-105 hover:shadow-lg' : ''}`}>
@@ -533,7 +528,6 @@ function BarChartSimple({ data }){
   return (
     <div className="w-full h-full">
       <svg viewBox={`0 0 ${chartWidth} ${chartHeight}`} className="w-full h-full">
-        {/* Y-Axis Grid Lines and Labels */}
         <g className="y-axis text-xs" fill="#94a3b8">
           {yAxisLabels.map(label => (
             <g key={label}>
@@ -551,7 +545,6 @@ function BarChartSimple({ data }){
           ))}
         </g>
         
-        {/* X-Axis Line */}
         <line 
           x1={padding.left} 
           y1={chartHeight - padding.bottom} 
@@ -560,7 +553,7 @@ function BarChartSimple({ data }){
           stroke="#cbd5e1" 
         />
 
-        {/* Chart Bars and Labels */}
+        //Chart
         {data.filter(d => d).map((d, i) => {
           const x = xScale(i) + (((chartWidth - padding.left - padding.right) / data.length) - barWidth) / 2;
           const y = yScale(d.level);
