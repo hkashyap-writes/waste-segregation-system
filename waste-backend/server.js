@@ -4,7 +4,6 @@ const cors = require('cors');
 const nodemailer = require('nodemailer');
 const app = express();
 const PORT = 3001;
-
 const fs = require('fs/promises');
 const LOG_FILE_PATH = './data/logs.json';
 
@@ -25,7 +24,6 @@ async function writeLogs(logs) {
 app.use(cors());
 app.use(express.json());
 
-
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -36,7 +34,6 @@ const transporter = nodemailer.createTransport({
 
 async function dispatchAlertToAllAgents(bin) {
   console.log(`Dispatching alerts for ${bin.name} to ${AGENT_EMAILS.length} agents.`);
-
   for (const agentEmail of AGENT_EMAILS) {
     const serviceLink = `https://bailey-interpulmonary-resistlessly.ngrok-free.dev/api/service?binId=${bin.id}&agent=${agentEmail}`;
     const mailOptions = {
@@ -57,17 +54,14 @@ async function dispatchAlertToAllAgents(bin) {
   }
 }
 
-// --- In-Memory Data Store ---
 let bins = [
-  // Initialize with base structure but perhaps 0 level
   { id: "metal", name: "Metal Waste", level: 0, status: "OK", lastEmpty: new Date().toISOString(), autoDispatchEnabled: false },
   { id: "bio", name: "Biodegradable Waste", level: 0, status: "OK", lastEmpty: new Date().toISOString(), autoDispatchEnabled: false },
   { id: "nonbio", name: "Non-Biodegradable Waste", level: 0, status: "OK", lastEmpty: new Date().toISOString(), autoDispatchEnabled: false },
 ];
 let sensorHistory = []; 
 let pickupHistory = []; 
-
-const AGENT_EMAILS = ['praterkverma112233@gmail.com', 'hkashyap0578@gmail.com', 'supratim1252004@gmail.com'];
+const AGENT_EMAILS = ['abc@gmail.com', 'def@gmail.com', 'ghi@gmail.com'];
 
 app.get('/api/bins', (req, res) => res.json(bins));
 
@@ -86,9 +80,7 @@ app.get('/api/collections/today', async (req, res) => {
 
   try {
     const allLogs = await readLogs(); 
-
     const todaysLogs = allLogs.filter(log => new Date(log.timestamp) >= startOfDay);
-
     const counts = todaysLogs.reduce((acc, log) => {
       acc.total++;
       if (log.binId) {
@@ -98,9 +90,7 @@ app.get('/api/collections/today', async (req, res) => {
       }
       return acc;
     }, { total: 0, metal: 0, bio: 0, nonbio: 0 });
-
     res.json(counts); 
-
   } catch (err) {
     console.error("Error reading logs for today's collections:", err);
     res.status(500).json({ total: 0, metal: 0, bio: 0, nonbio: 0 });
@@ -109,7 +99,6 @@ app.get('/api/collections/today', async (req, res) => {
 
 app.get('/api/service', (req, res) => {
   const { binId, agent } = req.query; 
-
   if (!binId) {
     return res.status(400).send('<h1>Error</h1><p>No bin ID provided.</p>');
   }
@@ -182,12 +171,10 @@ app.post('/api/log-entry', async (req, res) => {
       }
       return bin;
     });
-
     if (updatedBinForDispatch && updatedBinForDispatch.level >= 80 && updatedBinForDispatch.autoDispatchEnabled) {
       await dispatchAlertToAllAgents(updatedBinForDispatch);
     }
   }
-
   res.status(201).json({ message: "Log entry received and bin level updated" }); 
 });
 
@@ -223,7 +210,7 @@ app.post('/api/dispatch', async (req, res) => {
     const serviceLink = `https://bailey-interpulmonary-resistlessly.ngrok-free.dev/api/service?binId=${binId}&agent=${agentEmail}`;
 
     const mailOptions = {
-      from: '"Mr. Bean" <wss.mrbean001@gmail.com>',
+      from: '"Mr. ABC" <EMAIL_USER>',
       to: agentEmail,
       subject: `Waste Pickup Request: ${binName}`,
       html: `
@@ -239,10 +226,8 @@ app.post('/api/dispatch', async (req, res) => {
         <p><small>If you cannot click the button, please copy and paste this link into your browser: ${serviceLink}</small></p>
       `
     };
-
     transporter.sendMail(mailOptions).catch(err => console.error(`Failed to send email to ${agentEmail}:`, err));
   }
-
   res.status(200).send({ message: 'Dispatch emails sent to all agents.' });
 });
 
@@ -277,10 +262,8 @@ app.post('/api/increment-bin/:binId', async (req, res) => {
   if (!binId || !['metal', 'bio', 'nonbio'].includes(binId)) {
     return res.status(400).json({ message: 'Valid bin ID is required.' });
   }
-
   const increment = Math.floor(Math.random() * (25 - 15 + 1)) + 15;
   let updatedBinForDispatch = null; 
-
   bins = bins.map(bin => {
     if (bin && bin.id === binId) {
       const newLevel = Math.min(100, (bin.level || 0) + increment); 
@@ -301,12 +284,10 @@ app.post('/api/increment-bin/:binId', async (req, res) => {
     console.log(`Triggering auto-dispatch for ${updatedBinForDispatch.name} after level increment.`);
     await dispatchAlertToAllAgents(updatedBinForDispatch);
   }
-
   broadcast({
     type: 'BINS_UPDATE',
     payload: bins 
   });
-
   res.status(200).json({ message: `Bin ${binId} level incremented by ${increment}%.` });
 });
 
